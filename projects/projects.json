@@ -1,5 +1,11 @@
 [
-  "ai-shopping-app",
-  "ai-memory-pwa",
-  "timezone-clock"
+  {
+    "name": "ai-shopping-app"
+  },
+  {
+    "name": "ai-memory-pwa"
+  },
+  {
+    "name": "timezone-clock"
+  }
 ]
