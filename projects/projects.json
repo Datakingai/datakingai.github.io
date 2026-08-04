@@ -1,11 +1,23 @@
 [
   {
-    "name": "ai-shopping-app"
+    "id": "project-1",
+    "title": "AI Shopping App",
+    "description": "In development...",
+    "link": "#",
+    "status": "In Progress"
   },
   {
-    "name": "ai-memory-pwa"
+    "id": "project-2",
+    "title": "AI Memory PWA",
+    "description": "Progressive Web App for memory management and context storage.",
+    "link": "https://datakingai.github.io/pwa-starter/",
+    "status": "Active"
   },
   {
-    "name": "timezone-clock"
+    "id": "project-3",
+    "title": "Timezone Clock",
+    "description": "Simple utility for tracking multiple time zones.",
+    "link": "#",
+    "status": "Planned"
   }
 ]
