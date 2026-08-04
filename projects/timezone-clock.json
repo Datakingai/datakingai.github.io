@@ -1,0 +1,7 @@
+{
+  "id": "timezone-clock",
+  "title": "Timezone Clock",
+  "description": "A real-time digital clock displaying current time across multiple timezones. Built with vanilla JavaScript and styled with CSS animations.",
+  "link": "https://datakingai.github.io/timezone-clock/",
+  "tags": ["JavaScript", "Clock", "Timezone", "Real-time"]
+}
