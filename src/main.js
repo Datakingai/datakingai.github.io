@@ -1,5 +1,50 @@
 import './style.css'
 
+// ===== Load Projects from JSON =====
+async function loadProjects() {
+  try {
+    const response = await fetch('/projects/projects.json')
+    const projectIds = await response.json()
+    
+    const projectsContainer = document.querySelector('.projects-grid')
+    projectsContainer.innerHTML = '' // Clear existing projects
+    
+    for (const projectId of projectIds) {
+      const projectData = await fetch(`/projects/${projectId}.json`).then(r => r.json())
+      const projectCard = createProjectCard(projectData)
+      projectsContainer.appendChild(projectCard)
+    }
+    
+    // Re-observe new cards for scroll animation
+    document.querySelectorAll('.project-card').forEach(el => {
+      observer.observe(el)
+    })
+  } catch (error) {
+    console.error('Error loading projects:', error)
+  }
+}
+
+function createProjectCard(project) {
+  const card = document.createElement('div')
+  card.className = 'project-card'
+  card.style.opacity = '0'
+  card.style.transform = 'translateY(30px)'
+  card.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
+  
+  const tagsHtml = project.tags.length > 0 
+    ? `<div class="project-tags">${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}</div>`
+    : ''
+  
+  card.innerHTML = `
+    <h3>${project.title}</h3>
+    <p>${project.description}</p>
+    ${tagsHtml}
+    <a href="${project.link}" class="project-link">View Project →</a>
+  `
+  
+  return card
+}
+
 // ===== Scroll Reveal Animation =====
 const observerOptions = {
   threshold: 0.1,
@@ -64,3 +109,6 @@ window.addEventListener('scroll', () => {
     nav.style.background = 'rgba(15, 23, 42, 0.9)'
   }
 })
+
+// ===== Initialize =====
+document.addEventListener('DOMContentLoaded', loadProjects)
