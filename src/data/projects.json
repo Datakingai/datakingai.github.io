@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Memory Bank PWA (Project 1)",
+    "description": "A Progressive Web App starter to capture and recall memory snippets for AI training.",
+    "tags": ["PWA", "IndexedDB", "Service Worker"],
+    "url": "https://datakingai.github.io/pwa-starter"
+  },
+  {
+    "title": "Portfolio Website (Project 2)",
+    "description": "My project website built with Vite and static assets.",
+    "tags": ["Vite", "HTML", "CSS"],
+    "url": "https://datakingai.github.io"
+  },
+  {
+    "title": "Demo Integration (Project 3)",
+    "description": "Demo app showing integration between the PWA and the main site.",
+    "tags": ["Demo", "Integration"],
+    "url": "https://datakingai.github.io/demo"
+  }
+]
